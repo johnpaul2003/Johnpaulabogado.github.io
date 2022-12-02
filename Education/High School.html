@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #474e5d;
+  font-family: Helvetica, sans-serif;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  background-color: white;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+}
+
+/* Container around content */
+.container {
+  padding: 10px 40px;
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+}
+
+/* The circles on the timeline */
+.container::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: -17px;
+  background-color: white;
+  border: 4px solid #FF9F55;
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Place the container to the left */
+.left {
+  left: 0;
+}
+
+/* Place the container to the right */
+.right {
+  left: 50%;
+}
+
+/* Add arrows to the left container (pointing right) */
+.left::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  right: 30px;
+  border: medium solid white;
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent white;
+}
+
+/* Add arrows to the right container (pointing left) */
+.right::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  left: 30px;
+  border: medium solid white;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+}
+
+/* Fix the circle for containers on the right side */
+.right::after {
+  left: -16px;
+}
+
+/* The actual content */
+.content {
+  padding: 20px 30px;
+  background-color: white;
+  position: relative;
+  border-radius: 6px;
+}
+
+/* Media queries - Responsive timeline on screens less than 600px wide */
+@media screen and (max-width: 600px) {
+  /* Place the timelime to the left */
+  .timeline::after {
+  left: 31px;
+  }
+  
+  /* Full-width containers */
+  .container {
+  width: 100%;
+  padding-left: 70px;
+  padding-right: 25px;
+  }
+  
+  /* Make sure that all arrows are pointing leftwards */
+  .container::before {
+  left: 60px;
+  border: medium solid white;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+  }
+
+  /* Make sure all circles are at the same spot */
+  .left::after, .right::after {
+  left: 15px;
+  }
+  
+  /* Make all right containers behave like the left ones */
+  .right {
+  left: 0%;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="timeline">
+  <div class="container left">
+    <div class="content">
+      <h2>Grade 7</h2>
+      <p>I have gained my independence slowly throughout high school. The importance of being independent is being secure with who you are and what you believe in. It is extremely empowering knowing that you are in control of your own life and your own choices in high school</p>
+    </div>
+  </div>
+  <div class="container right">
+    <div class="content">
+      <h2>Grade 8</h2>
+      <p>My studying habits also challenged me through high school because test and quizzes were given out frequently and if you didn't know how to study you probably wouldn’t get a good grade. In 7th and 8th grade my studying habits were very poor and it showed tremendously on test and quizzes.</p>
+    </div>
+  </div>
+  <div class="container left">
+    <div class="content">
+      <h2>Grade 9</h2>
+      <p>I had many fun experiences in 9th grade. Although I am very excited to move on to highschool, I will miss 9th grade as well. I learned many things in 9th grade. I learned a lot about  history and I found physics very interesting. Algebra , the two high school classes that I took this year were quite challenging but very rewarding. Hanging out with my friends in P.E. was one of the best things throughout the year. In English I had lots of fun reading different novels and short stories. Watching the movie of things we read was great because it helped me visualize, compare, and understand the story better. </p>
+    </div>
+  </div>
+  <div class="container right">
+    <div class="content">
+      <h2>Grade 10</h2>
+      <p>Something that I have learned to do is to compliment other people, because even though it may not change your day, it could drastically change theirs. It seems like such a simple thing, but much like appreciating your teachers, it goes a long way. Boys and girls alike struggle with body image and feeling accepted, and often times it just takes one comment to make or break their day. One day during my sophomore year, I was walking down an empty hallway and I noticed another girl that I had never met before walking the opposite direction. I said to her, “Hey, I really like your outfit, it looks nice!” and she smiled, and we both continued on our separate ways. Three months later, she came up to me and told me that that one comment I had made to her convinced her that there was still good in the world.</p>
+    </div>
+  </div>
+  <div class="container left">
+    <div class="content">
+      <center><h2>Sample of Picture</h2></center>
+  
+      <center><img src="g9.jpg" alt="Girl in a jacket" width="400" height="250"> </center>
+</div>
+  </div>
+  <div class="container right">
+    <div class="content">
+     <center> <h2>Sample of Picture 2</h2></center>
+      
+<center><img src="g10.jpg" alt="Girl in a jacket" width="400" height="250"> </center>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #474e5d;
+  font-family: Helvetica, sans-serif;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  background-color: white;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+}
+
+/* Container around content */
+.container {
+  padding: 10px 40px;
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+}
+
+/* The circles on the timeline */
+.container::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: -17px;
+  background-color: white;
+  border: 4px solid #FF9F55;
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Place the container to the left */
+.left {
+  left: 0;
+}
+
+/* Place the container to the right */
+.right {
+  left: 50%;
+}
+
+/* Add arrows to the left container (pointing right) */
+.left::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  right: 30px;
+  border: medium solid white;
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent white;
+}
+
+/* Add arrows to the right container (pointing left) */
+.right::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  left: 30px;
+  border: medium solid white;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+}
+
+/* Fix the circle for containers on the right side */
+.right::after {
+  left: -16px;
+}
+
+/* The actual content */
+.content {
+  padding: 20px 30px;
+  background-color: white;
+  position: relative;
+  border-radius: 6px;
+}
+
+/* Media queries - Responsive timeline on screens less than 600px wide */
+@media screen and (max-width: 600px) {
+  /* Place the timelime to the left */
+  .timeline::after {
+  left: 31px;
+  }
+  
+  /* Full-width containers */
+  .container {
+  width: 100%;
+  padding-left: 70px;
+  padding-right: 25px;
+  }
+  
+  /* Make sure that all arrows are pointing leftwards */
+  .container::before {
+  left: 60px;
+  border: medium solid white;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+  }
+
+  /* Make sure all circles are at the same spot */
+  .left::after, .right::after {
+  left: 15px;
+  }
+  
+  /* Make all right containers behave like the left ones */
+  .right {
+  left: 0%;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="timeline">
+  <div class="container left">
+    <div class="content">
+      <h2>Grade 1</h2>
+      <p>It is a year full of new experiences and adventures for us to learn and grow by maturing into children instead of toddlers. My first grade year will forever be an important year in my mind and heart because during this year I truly learned how much family, especially parents, impact my life.</p>
+    </div>
+  </div>
+  <div class="container right">
+    <div class="content">
+      <h2>Grade 2</h2>
+      <p>As I was walking into a new classroom my second grade year, I could feel my heart pounding as I opened the door to a room full of new faces. All of the children were extremely friendly and I made friends immediately. The day begins with the teacher telling us a plethora of exciting activities we would be doing in the coming year, the main one being a Thanksgiving play.</p>
+    </div>
+  </div>
+  <div class="container left">
+    <div class="content">
+      <h2>Grade 3</h2>
+      <p>My school has a beautiful campus with two big playgrounds. One is at the front and the other behind the school building. I play dodge-ball with my friends at one of the playgrounds. We also play cricket, football, hide-and-seek in the playground. My school has several small gardens. There are roses, sunflowers, and marigolds in these gardens. These flowers make my school look even more beautiful.</p>
+    </div>
+  </div>
+  <div class="container right">
+    <div class="content">
+      <h2>Grade 4</h2>
+<p> 		The grade school years were significant years in my life. I had oodles of fun, learned how to read and write, made new friends along the way, and developed new skills I enjoyed. </p>
+</div>
+  </div>
+
+  <div class="container left">
+    <div class="content">
+      <h2>Grade 5</h2>
+<p>My school has lots of great teachers. They love all of us. They teach us well and help us whenever we have any doubt. They teach us subjects like Maths, English, Hindi, EVS, etc. They always maintain a happy and fun environment in the school. I truly love my school very much.</p>
+ </div>
+  </div>
+
+  <div class="container right">
+    <div class="content">
+      <h2>Grade 6</h2>
+<p>I was finally in sixth grade and I knew this year would go great. I had finally made it to 6th grade. I was determined to have a great year. The year got off to a decent enough start We did a lot of fun projects and math wasn’t to hard for the most part.</p>
+
+</div>
+  </div>
+</body>
+</html>
